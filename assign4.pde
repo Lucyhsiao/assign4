@@ -123,18 +123,13 @@ void keyPressed() {
 
 /*---------Make Alien Function-------------*/
 void alienMaker(int num , int col) {
-  for(int i=0 ; i < num; i++){
-    
-      int k = i /col;
-      int p = i %col;
-      aList[i]= new  Alien(50+40*p, 50+50*k);
-  /*aList[0]= new Alien(50, 50);
-  aList[1]= new Alien(90, 50);
-  aList[2]= new Alien(50, 100);
-  aList[3]= new Alien(90, 100);
-  aList[4]= new Alien(50, 150);*/
+  for(int i=0 ; i < num; i++){    
+      float k = i /col;
+      float p = i %col;
+      aList[i]= new  Alien(int(50+40*p), int(50+50*k));  
     }
   }
+
 void drawLife() {
   fill(230, 74, 96);
   text("LIFE:", 36, 455);
@@ -182,6 +177,7 @@ void drawAlien() {
     }
   }
 }
+
 /*--------Check Line Hit---------*/
  void checkAlienBut(){
  for (int j=0; j<aList.length-1; j++) {
@@ -342,6 +338,7 @@ void checkRubyCatch(){
        ruby.show = false;
   }
 }
+
 /*---------Print Text Function-------------*/
 void printText(){
     fill(95,194,226);
@@ -375,6 +372,7 @@ void printText(){
   }
   
 }
+
 
 void removeBullet(Bullet obj) {
   obj.gone = true;
@@ -452,6 +450,7 @@ void statusCtrl() {
     }
   }
 }
+
 void cheatKeys() {
 
   if (key == 'R'||key == 'r') {
